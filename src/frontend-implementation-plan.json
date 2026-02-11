@@ -1,36 +1,37 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add generated favicon asset and ensure correct HTML favicon reference",
+  "title": "Fix favicon asset + cross-browser favicon markup",
   "requirements": [
     {
-      "id": "REQ-12",
-      "summary": "Add the generated favicon PNG to the frontend public generated assets so it is served instead of the default tab icon.",
+      "id": "REQ-14",
+      "summary": "Ensure the 32x32 PNG favicon asset exists in the deployed static assets and is valid/non-empty.",
       "acceptanceCriteria": [
-        "A file named subrin-favicon-uploaded.dim_32x32.png exists at frontend/public/assets/generated/ in the built output.",
-        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in the browser returns HTTP 200 (not 404).",
-        "After a hard refresh, the browser tab displays the custom favicon (not the default icon)."
+        "The repository contains the file at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png.",
+        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in a browser returns HTTP 200 with Content-Type image/png.",
+        "The browser tab shows the custom favicon instead of the default icon after a hard refresh."
       ],
       "file_operations": [
         {
           "path": "frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png",
           "operation": "create",
-          "description": "Add the missing generated favicon asset file exactly at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so it is included in the build and can be fetched at /assets/generated/subrin-favicon-uploaded.dim_32x32.png."
+          "description": "Add the required non-empty, valid PNG favicon asset at this exact path so it is served as a static file from the deployed frontend (per imageRequirements: Simplified favicon icon)."
         }
       ]
     },
     {
-      "id": "REQ-13",
-      "summary": "Verify and, if necessary, update frontend/index.html to reference the exact favicon path/filename without any overriding favicon links.",
+      "id": "REQ-15",
+      "summary": "Update favicon link markup in frontend/index.html for broad browser compatibility (icon + shortcut icon).",
       "acceptanceCriteria": [
-        "frontend/index.html contains a <link rel='icon'> (or equivalent) that points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png with sizes='32x32' and type='image/png'.",
-        "No other favicon link in frontend/index.html overrides this reference."
+        "frontend/index.html contains a <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
+        "frontend/index.html also contains a <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
+        "After redeploy, the favicon appears in the browser tab when loading the site in a fresh/incognito window."
       ],
       "file_operations": [
         {
           "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Ensure there is exactly one effective favicon reference pointing to /assets/generated/subrin-favicon-uploaded.dim_32x32.png with type='image/png' and sizes='32x32', and remove/adjust any other favicon-related tags only if they override this reference."
+          "description": "Ensure there is a 32x32 PNG <link rel=\"icon\" ...> pointing to /assets/generated/subrin-favicon-uploaded.dim_32x32.png and add a redundant <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> for compatibility, without changing unrelated page content."
         }
       ]
     }

@@ -1,12 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 15,
+  "projectStateVersion": 17,
   "summary": "Build a website for a stationery shop named \"Subrin Kitab Pasal\" located in Makalbari, Kathmandu, including contact number 9888888888.",
   "architectural_notes": [
     "Founder image should be rendered as a small circular avatar (CSS border-radius: 50%) with suitable sizing/alignment per design."
   ],
   "known_issues": [
-    "Favicon shows default browser tab icon because the referenced generated favicon file (/assets/generated/subrin-favicon-uploaded.dim_32x32.png) is missing from public assets, causing a fallback to the default icon."
+    "Favicon shows default browser tab icon because the referenced generated favicon file (/assets/generated/subrin-favicon-uploaded.dim_32x32.png) is missing from public assets, causing a fallback to the default icon.",
+    "Favicon still not showing in the browser tab after Version 7 deploy; likely still an issue with favicon asset presence/path or browser caching."
   ],
   "isFixRequest": true,
   "imageRequirements": "## Required Images\n- Simplified favicon icon (subrin-favicon-uploaded.dim_32x32.png)",
@@ -104,6 +105,22 @@
       "title": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
       "reqIds": [
         "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-favicon-file-exists-in-the-deployed-frontend-static-assets-at-exactly-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-that-it-is-a-valid-non-empty-png-image",
+      "title": "Ensure the favicon file exists in the deployed frontend static assets at exactly: frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png, and that it is a valid, non-empty PNG image.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-keep-frontend-index-html-favicon-markup-correct-and-compatible-across-browsers-by-ensuring-a-32x32-png-favicon-link-is-present-and-points-to-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-add-a-second-redundant-favicon-link-same-href-using-rel-shortcut-icon-to-improve-compatibility",
+      "title": "Keep frontend/index.html favicon markup correct and compatible across browsers by ensuring a 32x32 PNG favicon link is present and points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png, and add a second redundant favicon link (same href) using rel=\"shortcut icon\" to improve compatibility.",
+      "reqIds": [
+        "REQ-15"
       ],
       "version": 1
     }

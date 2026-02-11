@@ -1,69 +1,57 @@
 {
   "kind": "build_request",
-  "title": "Fix missing favicon so browser tab no longer shows default icon",
+  "title": "Fix favicon still not showing in browser tab",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-12",
-      "text": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
+      "id": "REQ-14",
+      "text": "Ensure the favicon file exists in the deployed frontend static assets at exactly: frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png, and that it is a valid, non-empty PNG image.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "recent-msg-user-1",
-          "recent-msg-user-2"
+          "msg-User-1"
         ],
         "quotes": [
-          "but why it gets defualt picture in tab??",
-          "ok"
+          "still no showing"
         ]
       },
       "acceptanceCriteria": [
-        "A file named subrin-favicon-uploaded.dim_32x32.png exists at frontend/public/assets/generated/ in the built output.",
-        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in the browser returns HTTP 200 (not 404).",
-        "After a hard refresh, the browser tab displays the custom favicon (not the default icon)."
+        "The repository contains the file at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png.",
+        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in a browser returns HTTP 200 with Content-Type image/png.",
+        "The browser tab shows the custom favicon instead of the default icon after a hard refresh."
       ]
     },
     {
-      "id": "REQ-13",
-      "text": "Ensure frontend/index.html references the correct favicon path and filename: /assets/generated/subrin-favicon-uploaded.dim_32x32.png (type image/png, sizes 32x32). Update it only if it does not exactly match the generated asset filename/path.",
+      "id": "REQ-15",
+      "text": "Keep frontend/index.html favicon markup correct and compatible across browsers by ensuring a 32x32 PNG favicon link is present and points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png, and add a second redundant favicon link (same href) using rel=\"shortcut icon\" to improve compatibility.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "recent-msg-user-1"
+          "msg-User-1"
         ],
         "quotes": [
-          "but why it gets defualt picture in tab??"
+          "still no showing"
         ]
       },
       "acceptanceCriteria": [
-        "frontend/index.html contains a <link rel='icon'> (or equivalent) that points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png with sizes='32x32' and type='image/png'.",
-        "No other favicon link in frontend/index.html overrides this reference."
+        "frontend/index.html contains a <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
+        "frontend/index.html also contains a <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
+        "After redeploy, the favicon appears in the browser tab when loading the site in a fresh/incognito window."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (read-only).",
-    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, or frontend/src/main.tsx (immutable paths).",
-    "Keep the backend as a single Motoko actor; no backend changes are needed for favicon/static assets."
+    "All user-facing text must remain in English.",
+    "Do not edit any files under frontend/src/components/ui or any other immutable paths listed in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "Adding new pages or changing existing marketing-site sections/content beyond what is required to fix the favicon issue.",
-    "Introducing any backend logic for serving images (favicon must remain a frontend static asset)."
+    "No backend (Motoko) changes.",
+    "No changes to site content/sections unrelated to the favicon issue."
   ],
   "imageRequirements": {
     "required": [
       "Simplified favicon icon (subrin-favicon-uploaded.dim_32x32.png)"
     ],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

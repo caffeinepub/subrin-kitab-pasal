@@ -1,10 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Fix the missing favicon so the browser tab shows the app’s custom icon instead of the default.
+**Goal:** Fix the site favicon so it reliably appears in the browser tab after deploy.
 
 **Planned changes:**
-- Add the generated favicon file to `frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png` so it is served as a static asset.
-- Verify and, only if needed, update `frontend/index.html` to reference `/assets/generated/subrin-favicon-uploaded.dim_32x32.png` with `type="image/png"` and `sizes="32x32"`, ensuring no other favicon link overrides it.
+- Ensure the PNG favicon file exists at `frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png` and is a valid, non-empty image.
+- Verify the deployed static path `/assets/generated/subrin-favicon-uploaded.dim_32x32.png` serves HTTP 200 with `Content-Type: image/png`.
+- Update `frontend/index.html` to include a 32x32 PNG `<link rel="icon" ...>` pointing to `/assets/generated/subrin-favicon-uploaded.dim_32x32.png`.
+- Add a redundant `<link rel="shortcut icon" ...>` entry (same href) for broader browser compatibility.
 
-**User-visible outcome:** After a hard refresh, the browser tab displays the custom favicon and the favicon URL returns HTTP 200.
+**User-visible outcome:** After redeploy and a hard refresh (or opening in a fresh/incognito window), the custom favicon appears in the browser tab instead of the default icon.

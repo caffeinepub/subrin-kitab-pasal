@@ -2,5 +2,5 @@
   "frontend/src/App.tsx": "Single-page marketing website for Subrin Kitab Pasal with smooth-scrolling navigation, hero section, product categories, about section with text content followed by a small circular founder avatar at the end, location info, contact details, and footer with dynamic year and UTM-tracked attribution link.",
   "frontend/src/index.css": "Global styles with warm earthy OKLCH color system (paper/ink/wood tones) for both light and dark modes, avoiding blue/purple, with smooth scroll behavior.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with serif font family for headings and warm color tokens matching the stationery shop aesthetic.",
-  "frontend/index.html": "HTML entry point with favicon link now referencing the uploaded image at /assets/generated/subrin-favicon-uploaded.dim_32x32.png and page title."
+  "frontend/index.html": "HTML entry point with multiple favicon link formats (icon, shortcut icon, apple-touch-icon) all referencing /assets/generated/subrin-favicon-uploaded.dim_32x32.png for maximum browser compatibility, plus page title."
 }

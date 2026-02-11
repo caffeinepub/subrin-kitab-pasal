@@ -1,14 +1,14 @@
 {
-  "backend/main.mo": "Empty Motoko actor with no methods.",
-  "feature_evidence.json": "Feature report describing addition of a missing favicon asset and related metadata.",
-  "frontend-file-summaries.txt": "Prewritten summaries of several frontend files including App, CSS, Tailwind config, and HTML entry.",
-  "frontend/index.css": "Tailwind base layer defining numerous OKLCH CSS variables for light and dark modes and applying global styles.",
-  "frontend/index.html": "HTML entry point setting favicon, metadata, root div, and loading main.tsx.",
-  "frontend/src/App.tsx": "React SPA implementing smooth scrolling, navigation header, hero section, product listings, and business info UI.",
-  "frontend/src/hooks/useActor.ts": "React hook creating and caching an authenticated or anonymous backend actor and refreshing queries on identity change.",
-  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, persistence, and state via Dfinity AuthClient.",
-  "frontend/src/index.css": "Tailwind CSS file defining warm earthy color tokens, smooth scrolling, and global styling for sections and body.",
-  "frontend/src/main.tsx": "App bootstrap setting up React Query and Internet Identity provider before rendering App.",
-  "frontend/tailwind.config.js": "Tailwind configuration enabling dark mode, custom fonts, OKLCH color tokens, container settings, and plugins.",
-  "project_state.json": "Stores the project’s build state, feature requirements, known issues, and image needs for the Subrin Kitab Pasal website. Includes notes on missing favicon, required images, and multiple feature specs for site content and visuals."
+  "backend/main.mo": "Empty Motoko actor with no methods or logic.",
+  "feature_evidence.json": "JSON report listing feature evidence metadata for favicon requirements and related components.",
+  "frontend-file-summaries.txt": "Text file mapping frontend file paths to short functional descriptions.",
+  "frontend/index.css": "Tailwind base styles defining OKLCH color variables and dark mode overrides with global layout rules.",
+  "frontend/index.html": "HTML entry with favicon links, page metadata, and root mount point for the React app.",
+  "frontend/src/App.tsx": "Main React component rendering the marketing site layout, navigation, sections, and smooth scrolling interactions.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches a backend actor using Internet Identity and react‑query.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context provider and hooks implementing Internet Identity auth flow with AuthClient.",
+  "frontend/src/index.css": "Tailwind styles defining warm earthy OKLCH color variables, dark mode values, and global smoothing and spacing rules.",
+  "frontend/src/main.tsx": "Entry point mounting the React app with InternetIdentityProvider and react‑query client.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending colors, fonts, components, and utilities using OKLCH CSS variables.",
+  "project_state.json": "Defines the project’s current build state, required images, known favicon issues, and a list of existing website features. Provides architectural notes and flags the state as a fix request."
 }

@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-the-missing-generated-favicon-image-file-to-the-frontend-static-assets-at-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-so-the-browser-can-load-the-favicon-instead-of-falling-back-to-the-default-tab-icon",
-      "featureTitle": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
+      "featureId": "feature-ensure-the-favicon-file-exists-in-the-deployed-frontend-static-assets-at-exactly-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-that-it-is-a-valid-non-empty-png-image",
+      "featureTitle": "Ensure the favicon file exists in the deployed frontend static assets at exactly: frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png, and that it is a valid, non-empty PNG image.",
       "files": [],
       "components": [
         "core-infrastructure@1.0.2",
@@ -13,7 +13,25 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-12"
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-keep-frontend-index-html-favicon-markup-correct-and-compatible-across-browsers-by-ensuring-a-32x32-png-favicon-link-is-present-and-points-to-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-add-a-second-redundant-favicon-link-same-href-using-rel-shortcut-icon-to-improve-compatibility",
+      "featureTitle": "Keep frontend/index.html favicon markup correct and compatible across browsers by ensuring a 32x32 PNG favicon link is present and points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png, and add a second redundant favicon link (same href) using rel=\"shortcut icon\" to improve compatibility.",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
       ],
       "confidence": "high"
     }
