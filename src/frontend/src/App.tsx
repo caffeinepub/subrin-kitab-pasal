@@ -2,11 +2,15 @@ import { useEffect } from 'react';
 import { Phone, MapPin, Book, Pencil, Ruler, Palette } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { initGA4 } from '@/analytics/ga4';
 
 export default function App() {
   useEffect(() => {
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Initialize Google Analytics 4
+    initGA4();
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -315,15 +319,7 @@ export default function App() {
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
             <p>
-              © {new Date().getFullYear()}. Built with <span className="text-destructive">♥</span> using{' '}
-              <a
-                href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium hover:underline"
-              >
-                caffeine.ai
-              </a>
+              © {new Date().getFullYear()} Subrin Kitab Pasal. All rights reserved.
             </p>
           </div>
         </div>

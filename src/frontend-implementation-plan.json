@@ -1,37 +1,41 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix favicon asset + cross-browser favicon markup",
+  "title": "Remove caffeine.xyz/caffeine.ai references from UI and docs",
   "requirements": [
     {
-      "id": "REQ-14",
-      "summary": "Ensure the 32x32 PNG favicon asset exists in the deployed static assets and is valid/non-empty.",
+      "id": "REQ-22",
+      "summary": "Remove caffeine attribution/link from the public footer and ensure no other user-facing caffeine domain references remain.",
       "acceptanceCriteria": [
-        "The repository contains the file at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png.",
-        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in a browser returns HTTP 200 with Content-Type image/png.",
-        "The browser tab shows the custom favicon instead of the default icon after a hard refresh."
+        "The footer no longer contains any link or text referencing caffeine.ai, caffeine.xyz, or caffine.xyz.",
+        "The footer shows an English copyright line (e.g., \"© <current year> Subrin Kitab Pasal. All rights reserved.\").",
+        "No other user-facing UI text contains caffeine.ai/caffeine.xyz/caffine.xyz."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png",
-          "operation": "create",
-          "description": "Add the required non-empty, valid PNG favicon asset at this exact path so it is served as a static file from the deployed frontend (per imageRequirements: Simplified favicon icon)."
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace the footer attribution block that links to caffeine.ai (including UTM parameters) with a simple English copyright line using the current year (e.g., \"© {new Date().getFullYear()} Subrin Kitab Pasal. All rights reserved.\"). Also audit this file for any other occurrences of caffeine.ai/caffeine.xyz/caffine.xyz in user-facing text and remove/replace them."
         }
       ]
     },
     {
-      "id": "REQ-15",
-      "summary": "Update favicon link markup in frontend/index.html for broad browser compatibility (icon + shortcut icon).",
+      "id": "REQ-23",
+      "summary": "Remove/replace caffeine.xyz/caffine.xyz references in repository documentation and configuration examples with a neutral placeholder domain.",
       "acceptanceCriteria": [
-        "frontend/index.html contains a <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
-        "frontend/index.html also contains a <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
-        "After redeploy, the favicon appears in the browser tab when loading the site in a fresh/incognito window."
+        "Repository docs/config examples contain no occurrences of \"caffeine.xyz\" or \"caffine.xyz\".",
+        "If domain examples are needed in docs, they use a neutral placeholder (e.g., example.com) and remain in English."
       ],
       "file_operations": [
         {
-          "path": "frontend/index.html",
+          "path": "frontend/DEPLOYMENT.md",
           "operation": "modify",
-          "description": "Ensure there is a 32x32 PNG <link rel=\"icon\" ...> pointing to /assets/generated/subrin-favicon-uploaded.dim_32x32.png and add a redundant <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> for compatibility, without changing unrelated page content."
+          "description": "Audit this deployment/custom-domain guide for any mentions of \"caffeine.xyz\" or \"caffine.xyz\" (including in example URLs/domains) and remove or replace them with a neutral placeholder domain such as \"example.com\", without changing the underlying custom-domain guidance beyond that."
+        },
+        {
+          "path": "frontend/ANALYTICS.md",
+          "operation": "modify",
+          "description": "Audit this analytics documentation for any mentions of \"caffeine.xyz\" or \"caffine.xyz\" (including in any sample URLs or configuration examples) and remove or replace them with a neutral placeholder domain such as \"example.com\", keeping all examples and text in English."
         }
       ]
     }

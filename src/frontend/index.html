@@ -3,10 +3,22 @@
     <head>
         <meta charset='UTF-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link rel='icon' type='image/png' sizes='32x32' href='/assets/generated/subrin-favicon-uploaded.dim_32x32.png' />
-        <link rel='shortcut icon' type='image/png' href='/assets/generated/subrin-favicon-uploaded.dim_32x32.png' />
-        <link rel='apple-touch-icon' sizes='32x32' href='/assets/generated/subrin-favicon-uploaded.dim_32x32.png' />
+        <link rel='icon' type='image/png' href='/assets/generated/subrin-logo.dim_512x512.png' />
+        <link rel='shortcut icon' type='image/png' href='/assets/generated/subrin-logo.dim_512x512.png' />
+        <link rel='apple-touch-icon' href='/assets/generated/subrin-logo.dim_512x512.png' />
         <title>Subrin Kitab Pasal</title>
+        <script>
+            // Set canonical URL if VITE_SITE_URL is provided
+            (function() {
+                const siteUrl = '%VITE_SITE_URL%';
+                if (siteUrl && siteUrl.startsWith('http')) {
+                    const link = document.createElement('link');
+                    link.rel = 'canonical';
+                    link.href = siteUrl;
+                    document.head.appendChild(link);
+                }
+            })();
+        </script>
     </head>
     <body>
         <div id='root'></div>

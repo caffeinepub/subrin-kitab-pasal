@@ -1,14 +1,17 @@
 {
   "backend/main.mo": "Empty Motoko actor with no methods or logic.",
-  "feature_evidence.json": "JSON report listing feature evidence metadata for favicon requirements and related components.",
-  "frontend-file-summaries.txt": "Text file mapping frontend file paths to short functional descriptions.",
-  "frontend/index.css": "Tailwind base styles defining OKLCH color variables and dark mode overrides with global layout rules.",
-  "frontend/index.html": "HTML entry with favicon links, page metadata, and root mount point for the React app.",
-  "frontend/src/App.tsx": "Main React component rendering the marketing site layout, navigation, sections, and smooth scrolling interactions.",
-  "frontend/src/hooks/useActor.ts": "React hook that creates and caches a backend actor using Internet Identity and react‑query.",
-  "frontend/src/hooks/useInternetIdentity.ts": "React context provider and hooks implementing Internet Identity auth flow with AuthClient.",
-  "frontend/src/index.css": "Tailwind styles defining warm earthy OKLCH color variables, dark mode values, and global smoothing and spacing rules.",
-  "frontend/src/main.tsx": "Entry point mounting the React app with InternetIdentityProvider and react‑query client.",
-  "frontend/tailwind.config.js": "Tailwind configuration extending colors, fonts, components, and utilities using OKLCH CSS variables.",
-  "project_state.json": "Defines the project’s current build state, required images, known favicon issues, and a list of existing website features. Provides architectural notes and flags the state as a fix request."
+  "feature_evidence.json": "Feature evidence report listing a footer attribution removal feature and its related files, components, and metadata.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing each frontend file's purpose, styling, analytics setup, and deployment info.",
+  "frontend/ANALYTICS.md": "Guide explaining how to enable and configure GA4 using a measurement ID and environment variables.",
+  "frontend/DEPLOYMENT.md": "Instructions for connecting a custom domain to an Internet Computer frontend canister with DNS and setup steps.",
+  "frontend/index.css": "Tailwind base styles defining warm OKLCH color variables, dark mode values, and global element styling.",
+  "frontend/index.html": "HTML entry point with favicon assets, root container, script loader, and optional canonical URL injection.",
+  "frontend/src/analytics/ga4.ts": "Utility to initialize GA4 only when configured and provide safe event and page‑view tracking.",
+  "frontend/src/App.tsx": "React single‑page site with smooth scrolling, product listings, location and contact sections, and GA4 initialization.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor and refreshes dependent queries on change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity provider and hook handling II login, identity loading, logout, and auth client lifecycle.",
+  "frontend/src/index.css": "Tailwind base layer defining warm stationery‑themed color tokens, dark mode variants, and global spacing rules.",
+  "frontend/src/main.tsx": "Main React entry that mounts App with InternetIdentityProvider and React Query client.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration enabling dark mode, plugin usage, custom colors, fonts, layout settings, and extended utilities.",
+  "project_state.json": "Project metadata describing site requirements, features, issues, and architectural notes for the stationery shop website."
 }

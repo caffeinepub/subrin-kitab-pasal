@@ -1,6 +1,9 @@
 {
-  "frontend/src/App.tsx": "Single-page marketing website for Subrin Kitab Pasal with smooth-scrolling navigation, hero section, product categories, about section with text content followed by a small circular founder avatar at the end, location info, contact details, and footer with dynamic year and UTM-tracked attribution link.",
+  "frontend/src/App.tsx": "Single-page marketing website for Subrin Kitab Pasal with smooth-scrolling navigation, hero section, product categories, about section with founder photo, location info, contact details, and footer with simple copyright line (no external attribution).",
   "frontend/src/index.css": "Global styles with warm earthy OKLCH color system (paper/ink/wood tones) for both light and dark modes, avoiding blue/purple, with smooth scroll behavior.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with serif font family for headings and warm color tokens matching the stationery shop aesthetic.",
-  "frontend/index.html": "HTML entry point with multiple favicon link formats (icon, shortcut icon, apple-touch-icon) all referencing /assets/generated/subrin-favicon-uploaded.dim_32x32.png for maximum browser compatibility, plus page title."
+  "frontend/index.html": "HTML entry point with favicon links, page title, and inline script that conditionally adds a canonical link tag when VITE_SITE_URL environment variable is provided.",
+  "frontend/src/analytics/ga4.ts": "GA4 helper module that conditionally loads gtag.js based on VITE_GA_MEASUREMENT_ID environment variable, provides safe initialization and tracking functions, and operates as a no-op when not configured.",
+  "frontend/ANALYTICS.md": "Documentation explaining how to configure both GA4 tracking (via VITE_GA_MEASUREMENT_ID) and canonical URL (via VITE_SITE_URL) environment variables, with setup instructions, verification methods, and troubleshooting guidance using neutral placeholder domains.",
+  "frontend/DEPLOYMENT.md": "Comprehensive deployment guide for connecting a custom domain to the Internet Computer frontend canister, including DNS configuration steps, IC gateway setup, domain registration, propagation timing, and verification checklist with neutral placeholder domains."
 }

@@ -1,57 +1,53 @@
 {
   "kind": "build_request",
-  "title": "Fix favicon still not showing in browser tab",
+  "title": "Remove unnecessary caffeine.xyz/caffeine.ai references",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-14",
-      "text": "Ensure the favicon file exists in the deployed frontend static assets at exactly: frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png, and that it is a valid, non-empty PNG image.",
+      "id": "REQ-22",
+      "text": "Remove the public-facing footer attribution/link to caffeine (including any caffeine.ai/caffeine.xyz/caffine.xyz URLs and UTM parameters) from the website UI, and replace it with a simple English copyright line for the shop.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-User-1"
+          "msg-6"
         ],
         "quotes": [
-          "still no showing"
+          "i mean to remove unnessary caffine.xyz"
         ]
       },
       "acceptanceCriteria": [
-        "The repository contains the file at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png.",
-        "Requesting /assets/generated/subrin-favicon-uploaded.dim_32x32.png in a browser returns HTTP 200 with Content-Type image/png.",
-        "The browser tab shows the custom favicon instead of the default icon after a hard refresh."
+        "The footer no longer contains any link or text referencing caffeine.ai, caffeine.xyz, or caffine.xyz.",
+        "The footer shows an English copyright line (e.g., \"© <current year> Subrin Kitab Pasal. All rights reserved.\").",
+        "No other user-facing UI text contains caffeine.ai/caffeine.xyz/caffine.xyz."
       ]
     },
     {
-      "id": "REQ-15",
-      "text": "Keep frontend/index.html favicon markup correct and compatible across browsers by ensuring a 32x32 PNG favicon link is present and points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png, and add a second redundant favicon link (same href) using rel=\"shortcut icon\" to improve compatibility.",
+      "id": "REQ-23",
+      "text": "Remove or replace any references to the domain \"caffeine.xyz\" or \"caffine.xyz\" in repository documentation and configuration examples (e.g., deployment/domain docs), using a neutral placeholder domain (e.g., \"example.com\") if an example is needed.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-User-1"
+          "msg-6"
         ],
         "quotes": [
-          "still no showing"
+          "i mean to remove unnessary caffine.xyz"
         ]
       },
       "acceptanceCriteria": [
-        "frontend/index.html contains a <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
-        "frontend/index.html also contains a <link rel=\"shortcut icon\" type=\"image/png\" href=\"/assets/generated/subrin-favicon-uploaded.dim_32x32.png\" /> entry.",
-        "After redeploy, the favicon appears in the browser tab when loading the site in a fresh/incognito window."
+        "Repository docs/config examples contain no occurrences of \"caffeine.xyz\" or \"caffine.xyz\".",
+        "If domain examples are needed in docs, they use a neutral placeholder (e.g., example.com) and remain in English."
       ]
     }
   ],
   "constraints": [
-    "All user-facing text must remain in English.",
-    "Do not edit any files under frontend/src/components/ui or any other immutable paths listed in SYSTEM_CONTEXT."
+    "Do not edit files under frontend/src/components/ui or any paths listed as immutable in SYSTEM_CONTEXT."
   ],
   "nonGoals": [
-    "No backend (Motoko) changes.",
-    "No changes to site content/sections unrelated to the favicon issue."
+    "Do not change the existing custom-domain support functionality or DNS guidance beyond removing/replacing caffeine.xyz/caffine.xyz references.",
+    "Do not modify Google Analytics behavior or measurement ID configuration as part of this change."
   ],
   "imageRequirements": {
-    "required": [
-      "Simplified favicon icon (subrin-favicon-uploaded.dim_32x32.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

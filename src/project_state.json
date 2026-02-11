@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 17,
+  "projectStateVersion": 25,
   "summary": "Build a website for a stationery shop named \"Subrin Kitab Pasal\" located in Makalbari, Kathmandu, including contact number 9888888888.",
   "architectural_notes": [
     "Founder image should be rendered as a small circular avatar (CSS border-radius: 50%) with suitable sizing/alignment per design."
@@ -9,8 +9,7 @@
     "Favicon shows default browser tab icon because the referenced generated favicon file (/assets/generated/subrin-favicon-uploaded.dim_32x32.png) is missing from public assets, causing a fallback to the default icon.",
     "Favicon still not showing in the browser tab after Version 7 deploy; likely still an issue with favicon asset presence/path or browser caching."
   ],
-  "isFixRequest": true,
-  "imageRequirements": "## Required Images\n- Simplified favicon icon (subrin-favicon-uploaded.dim_32x32.png)",
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-single-page-marketing-website-for-the-stationery-shop-named-subrin-kitab-pasal-with-the-following-sections-header-shop-name-simple-navigation-hero-headline-short-description-products-offerings-stationery-categories-about-brief-shop-intro-location-kathmandu-and-contact-prominently-show-phone-number-9888888888-all-user-facing-copy-must-be-in-english",
@@ -123,6 +122,62 @@
         "REQ-15"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-set-the-browser-tab-favicon-to-use-the-shop-logo-by-ensuring-the-deployed-favicon-asset-at-assets-generated-subrin-favicon-uploaded-dim-32x32-png-is-generated-from-the-current-logo-image-frontend-public-assets-generated-subrin-logo-dim-512x512-png-and-is-a-valid-non-empty-png",
+      "title": "Set the browser tab favicon to use the shop logo by ensuring the deployed favicon asset at /assets/generated/subrin-favicon-uploaded.dim_32x32.png is generated from the current logo image (frontend/public/assets/generated/subrin-logo.dim_512x512.png) and is a valid, non-empty PNG.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-keep-frontend-index-html-favicon-markup-pointing-to-assets-generated-subrin-favicon-uploaded-dim-32x32-png-rel-icon-sizes-32x32-and-rel-shortcut-icon-so-browsers-consistently-load-the-logo-based-favicon",
+      "title": "Keep frontend/index.html favicon markup pointing to /assets/generated/subrin-favicon-uploaded.dim_32x32.png (rel=\"icon\" sizes=\"32x32\" and rel=\"shortcut icon\"), so browsers consistently load the logo-based favicon.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-google-analytics-ga4-into-the-frontend-so-the-site-owner-can-see-how-many-people-visit-the-website-and-basic-traffic-insights",
+      "title": "Integrate Google Analytics (GA4) into the frontend so the site owner can see how many people visit the website and basic traffic insights.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-configuration-documentation-note-in-the-repository-explaining-where-to-set-the-ga4-measurement-id-for-deployments",
+      "title": "Add a simple configuration/documentation note in the repository explaining where to set the GA4 Measurement ID for deployments.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-deployment-documentation-for-connecting-a-real-custom-domain-to-the-internet-computer-web-frontend-canister-including-the-exact-dns-records-to-create-where-to-find-the-target-values-canister-id-boundary-node-gateway-and-a-verification-checklist-to-confirm-the-domain-is-serving-the-site-over-https",
+      "title": "Add deployment documentation for connecting a real/custom domain to the Internet Computer web frontend canister, including the exact DNS records to create, where to find the target values (canister ID / boundary node gateway), and a verification checklist to confirm the domain is serving the site over HTTPS.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-site-s-canonical-public-url-configurable-for-production-by-introducing-a-single-environment-variable-e-g-vite-site-url-and-using-it-to-set-a-canonical-link-tag-in-frontend-index-html-fall-back-safely-when-unset",
+      "title": "Make the site’s canonical/public URL configurable for production by introducing a single environment variable (e.g., VITE_SITE_URL) and using it to set a canonical link tag in frontend/index.html (fall back safely when unset).",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-public-facing-footer-attribution-link-to-caffeine-including-any-caffeine-ai-caffeine-xyz-caffine-xyz-urls-and-utm-parameters-from-the-website-ui-and-replace-it-with-a-simple-english-copyright-line-for-the-shop",
+      "title": "Remove the public-facing footer attribution/link to caffeine (including any caffeine.ai/caffeine.xyz/caffine.xyz URLs and UTM parameters) from the website UI, and replace it with a simple English copyright line for the shop.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -167,6 +222,32 @@
       "summary": "Ensure frontend/index.html references the correct favicon path and filename: /assets/generated/subrin-favicon-uploaded.dim_32x32.png (type image/png, sizes 32x32). Update it only if it does not exactly match the generated asset filename/path.",
       "reqIds": [
         "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add website analytics (e.g., Google Analytics) so the owner can see how many people visit the website and basic traffic insights.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Set up a real/custom domain for the website (production domain) and point the live deployment to it.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Remove unnecessary references/configuration for the domain \"caffine.xyz\" (e.g., from deployment/domain settings and documentation) if it is not intended to be used.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Remove or replace any references to the domain \"caffeine.xyz\" or \"caffine.xyz\" in repository documentation and configuration examples (e.g., deployment/domain docs), using a neutral placeholder domain (e.g., \"example.com\") if an example is needed.",
+      "reqIds": [
+        "REQ-23"
       ],
       "status": "pending"
     }

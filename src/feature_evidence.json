@@ -2,26 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-ensure-the-favicon-file-exists-in-the-deployed-frontend-static-assets-at-exactly-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-that-it-is-a-valid-non-empty-png-image",
-      "featureTitle": "Ensure the favicon file exists in the deployed frontend static assets at exactly: frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png, and that it is a valid, non-empty PNG image.",
-      "files": [],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-14"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-keep-frontend-index-html-favicon-markup-correct-and-compatible-across-browsers-by-ensuring-a-32x32-png-favicon-link-is-present-and-points-to-assets-generated-subrin-favicon-uploaded-dim-32x32-png-and-add-a-second-redundant-favicon-link-same-href-using-rel-shortcut-icon-to-improve-compatibility",
-      "featureTitle": "Keep frontend/index.html favicon markup correct and compatible across browsers by ensuring a 32x32 PNG favicon link is present and points to /assets/generated/subrin-favicon-uploaded.dim_32x32.png, and add a second redundant favicon link (same href) using rel=\"shortcut icon\" to improve compatibility.",
+      "featureId": "feature-remove-the-public-facing-footer-attribution-link-to-caffeine-including-any-caffeine-ai-caffeine-xyz-caffine-xyz-urls-and-utm-parameters-from-the-website-ui-and-replace-it-with-a-simple-english-copyright-line-for-the-shop",
+      "featureTitle": "Remove the public-facing footer attribution/link to caffeine (including any caffeine.ai/caffeine.xyz/caffine.xyz URLs and UTM parameters) from the website UI, and replace it with a simple English copyright line for the shop.",
       "files": [
-        "frontend/index.html"
+        "frontend/src/App.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -31,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-22"
       ],
       "confidence": "high"
     }
