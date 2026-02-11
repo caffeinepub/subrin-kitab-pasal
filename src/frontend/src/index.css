@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        /* Warm paper/parchment background */
+        --background: 0.98 0.015 60;
+        --foreground: 0.25 0.02 40;
+        /* Warm ink/wood primary */
+        --primary: 0.35 0.08 35;
+        --primary-foreground: 0.98 0.01 60;
+        /* Soft secondary */
+        --secondary: 0.92 0.02 55;
+        --secondary-foreground: 0.30 0.03 35;
+        /* Muted warm tones */
+        --muted: 0.94 0.015 50;
+        --muted-foreground: 0.50 0.02 40;
+        /* Warm accent */
+        --accent: 0.88 0.04 45;
+        --accent-foreground: 0.30 0.03 35;
+        /* Warm destructive/love accent */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 60;
+        /* Borders and inputs */
+        --border: 0.88 0.02 50;
+        --input: 0.88 0.02 50;
+        --ring: 0.35 0.08 35;
+        /* Card */
+        --card: 0.99 0.01 60;
+        --card-foreground: 0.25 0.02 40;
+        /* Popover */
+        --popover: 0.99 0.01 60;
+        --popover-foreground: 0.25 0.02 40;
+        /* Charts - warm earthy palette */
+        --chart-1: 0.55 0.15 35;
+        --chart-2: 0.60 0.12 50;
+        --chart-3: 0.45 0.10 25;
+        --chart-4: 0.70 0.14 45;
+        --chart-5: 0.50 0.18 30;
+    }
+
+    .dark {
+        /* Dark warm paper */
+        --background: 0.18 0.02 35;
+        --foreground: 0.95 0.01 55;
+        /* Lighter warm primary for dark mode */
+        --primary: 0.75 0.08 45;
+        --primary-foreground: 0.20 0.02 35;
+        /* Dark secondary */
+        --secondary: 0.28 0.03 35;
+        --secondary-foreground: 0.95 0.01 55;
+        /* Dark muted */
+        --muted: 0.30 0.02 40;
+        --muted-foreground: 0.65 0.02 45;
+        /* Dark accent */
+        --accent: 0.40 0.05 40;
+        --accent-foreground: 0.95 0.01 55;
+        /* Destructive */
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.95 0.01 55;
+        /* Borders */
+        --border: 0.35 0.02 35;
+        --input: 0.35 0.02 35;
+        --ring: 0.75 0.08 45;
+        /* Card */
+        --card: 0.22 0.02 35;
+        --card-foreground: 0.95 0.01 55;
+        /* Popover */
+        --popover: 0.25 0.02 35;
+        --popover-foreground: 0.95 0.01 55;
+        /* Charts */
+        --chart-1: 0.65 0.15 40;
+        --chart-2: 0.70 0.12 50;
+        --chart-3: 0.55 0.10 30;
+        --chart-4: 0.75 0.14 45;
+        --chart-5: 0.60 0.18 35;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    /* Section spacing */
+    section {
+        @apply scroll-mt-16;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-the-missing-generated-favicon-image-file-to-the-frontend-static-assets-at-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-so-the-browser-can-load-the-favicon-instead-of-falling-back-to-the-default-tab-icon",
+      "featureTitle": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
+      "files": [],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

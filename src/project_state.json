@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Build a website for a stationery shop named \"Subrin Kitab Pasal\" located in Makalbari, Kathmandu, including contact number 9888888888.",
+  "architectural_notes": [
+    "Founder image should be rendered as a small circular avatar (CSS border-radius: 50%) with suitable sizing/alignment per design."
+  ],
+  "known_issues": [
+    "Favicon shows default browser tab icon because the referenced generated favicon file (/assets/generated/subrin-favicon-uploaded.dim_32x32.png) is missing from public assets, causing a fallback to the default icon."
+  ],
+  "isFixRequest": true,
+  "imageRequirements": "## Required Images\n- Simplified favicon icon (subrin-favicon-uploaded.dim_32x32.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-single-page-marketing-website-for-the-stationery-shop-named-subrin-kitab-pasal-with-the-following-sections-header-shop-name-simple-navigation-hero-headline-short-description-products-offerings-stationery-categories-about-brief-shop-intro-location-kathmandu-and-contact-prominently-show-phone-number-9888888888-all-user-facing-copy-must-be-in-english",
+      "title": "Create a responsive single-page marketing website for the stationery shop named \"Subrin KItab PAsal\" with the following sections: Header (shop name + simple navigation), Hero (headline + short description), Products/Offerings (stationery categories), About (brief shop intro), Location (Kathmandu), and Contact (prominently show phone number 9888888888). All user-facing copy must be in English.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-coherent-visual-theme-for-the-site-colors-typography-spacing-and-component-styling-with-a-distinct-stationery-bookshop-feel-and-apply-it-consistently-across-all-sections-avoid-blue-purple-as-the-primary-palette",
+      "title": "Implement a coherent visual theme for the site (colors, typography, spacing, and component styling) with a distinct stationery/bookshop feel and apply it consistently across all sections. Avoid blue/purple as the primary palette.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-footer-that-repeats-the-shop-name-kathmandu-location-and-phone-number-9888888888-and-includes-a-short-copyright-line",
+      "title": "Add a footer that repeats the shop name, Kathmandu location, and phone number 9888888888, and includes a short copyright line.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-to-the-project-under-frontend-public-assets-generated-and-use-them-on-the-homepage-logo-in-header-and-a-hero-illustration-banner-in-the-hero-section",
+      "title": "Add the required generated images to the project under frontend/public/assets/generated and use them on the homepage (logo in header and a hero illustration/banner in the hero section).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-displayed-shop-location-to-makalbari-kathmandu-in-both-places-where-location-is-shown-1-the-location-section-content-and-supporting-sentence-and-2-the-footer-location-line-ensure-the-updated-location-text-is-visible-on-the-page-and-remains-in-english",
+      "title": "Update the displayed shop location to \"Makalbari, Kathmandu\" in both places where location is shown: (1) the Location section content and supporting sentence, and (2) the Footer location line. Ensure the updated location text is visible on the page and remains in English.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-finalized-website-logo-image-from-the-user-uploaded-file-image-2-png-and-add-it-to-the-project-as-a-static-asset-under-frontend-public-assets-generated-with-the-filename-subrin-logo-dim-512x512-png",
+      "title": "Create a finalized website logo image from the user-uploaded file (image-2.png) and add it to the project as a static asset under frontend/public/assets/generated with the filename subrin-logo.dim_512x512.png.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-to-use-the-new-logo-consistently-the-header-logo-and-footer-logo-must-display-frontend-public-assets-generated-subrin-logo-dim-512x512-png-and-the-browser-tab-favicon-should-be-set-to-a-favicon-generated-from-the-same-logo",
+      "title": "Update the site to use the new logo consistently: the header logo and footer logo must display frontend/public/assets/generated/subrin-logo.dim_512x512.png, and the browser tab favicon should be set to a favicon generated from the same logo.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-section-content-to-explicitly-state-the-founder-s-full-name-as-subrin-shrestha-in-english-and-ensure-the-text-is-visible-on-the-page",
+      "title": "Update the About section content to explicitly state the founder’s full name as \"Subrin Shrestha\" (in English) and ensure the text is visible on the page.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-founder-image-to-the-website-by-placing-the-processed-uploaded-image-under-frontend-public-assets-generated-and-rendering-it-in-the-about-section-with-appropriate-alt-text",
+      "title": "Add a founder image to the website by placing the processed uploaded image under frontend/public/assets/generated and rendering it in the About section with appropriate alt text.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-about-section-move-the-founder-photo-content-to-appear-exactly-last-within-the-about-section-s-content-after-the-about-text-content-and-change-the-founder-photo-presentation-to-a-small-circular-avatar-style-image-that-looks-visually-suitable-on-both-mobile-and-desktop",
+      "title": "In the About section, move the founder photo content to appear exactly last within the About section’s content (after the About text content), and change the founder photo presentation to a small, circular (avatar-style) image that looks visually suitable on both mobile and desktop.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-a-png-favicon-from-the-user-uploaded-image-screenshot-2026-02-11-162152-png-add-it-as-a-static-asset-under-frontend-public-assets-generated-and-update-the-html-favicon-link-so-the-browser-tab-uses-this-new-favicon",
+      "title": "Generate a PNG favicon from the user-uploaded image (Screenshot 2026-02-11 162152.png), add it as a static asset under frontend/public/assets/generated, and update the HTML favicon link so the browser tab uses this new favicon.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-missing-generated-favicon-image-file-to-the-frontend-static-assets-at-frontend-public-assets-generated-subrin-favicon-uploaded-dim-32x32-png-so-the-browser-can-load-the-favicon-instead-of-falling-back-to-the-default-tab-icon",
+      "title": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for the stationery shop \"Subrin Kitab Pasal\" (Kathmandu) including contact details (9888888888).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Update the site location to \"Makalbari, Kathmandu\" in both the Location section and the footer.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add a website logo (web logo) to the site (details/spec to be clarified).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Update founder name to \"Subrin Shrestha\" and add an image (founder or relevant) to the website.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Adjust the founder photo presentation to be smaller and displayed in a circular (avatar-style) crop, positioned appropriately (\"exactly last\" as requested).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Set the site favicon to use the logo (add the logo as browser tab favicon).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Ensure frontend/index.html references the correct favicon path and filename: /assets/generated/subrin-favicon-uploaded.dim_32x32.png (type image/png, sizes 32x32). Update it only if it does not exactly match the generated asset filename/path.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Subrin Kitab Pasal",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

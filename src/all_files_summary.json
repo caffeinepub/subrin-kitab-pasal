@@ -1,0 +1,14 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods.",
+  "feature_evidence.json": "Feature report describing addition of a missing favicon asset and related metadata.",
+  "frontend-file-summaries.txt": "Prewritten summaries of several frontend files including App, CSS, Tailwind config, and HTML entry.",
+  "frontend/index.css": "Tailwind base layer defining numerous OKLCH CSS variables for light and dark modes and applying global styles.",
+  "frontend/index.html": "HTML entry point setting favicon, metadata, root div, and loading main.tsx.",
+  "frontend/src/App.tsx": "React SPA implementing smooth scrolling, navigation header, hero section, product listings, and business info UI.",
+  "frontend/src/hooks/useActor.ts": "React hook creating and caching an authenticated or anonymous backend actor and refreshing queries on identity change.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, persistence, and state via Dfinity AuthClient.",
+  "frontend/src/index.css": "Tailwind CSS file defining warm earthy color tokens, smooth scrolling, and global styling for sections and body.",
+  "frontend/src/main.tsx": "App bootstrap setting up React Query and Internet Identity provider before rendering App.",
+  "frontend/tailwind.config.js": "Tailwind configuration enabling dark mode, custom fonts, OKLCH color tokens, container settings, and plugins.",
+  "project_state.json": "Stores the project’s build state, feature requirements, known issues, and image needs for the Subrin Kitab Pasal website. Includes notes on missing favicon, required images, and multiple feature specs for site content and visuals."
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T11:25:13.467Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Add the missing generated favicon image file to the frontend static assets at frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png so the browser can load the favicon instead of falling back to the default tab icon.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Ensure frontend/index.html references the correct favicon path and filename: /assets/generated/subrin-favicon-uploaded.dim_32x32.png (type image/png, sizes 32x32). Update it only if it does not exactly match the generated asset filename/path.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/subrin-favicon-uploaded.dim_32x32.png",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
